@@ -32,4 +32,31 @@ function App() {
   );
 }
 
+function KpiCard({ title, value, subtitle }) {
+  const styles = {
+    card: {
+      borderRadius: 16,
+      padding: 18,
+      background: "linear-gradient(135deg, #2d4cff 0%, #1f2fb0 100%)",
+      boxShadow: "0 10px 24px rgba(0,0,0,.35)",
+      color: "#fff",
+      minHeight: 92,
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+    },
+    title: { fontSize: 12, letterSpacing: 0.6, fontWeight: 700, opacity: 0.9, textTransform: "uppercase" },
+    value: { marginTop: 6, fontSize: 34, fontWeight: 800, lineHeight: 1.05 },
+    subtitle: { marginTop: 6, fontSize: 12, opacity: 0.85 },
+  };
+
+  return (
+    <div style={styles.card}>
+      <div style={styles.title}>{title}</div>
+      <div style={styles.value}>{value}</div>
+      {subtitle ? <div style={styles.subtitle}>{subtitle}</div> : null}
+    </div>
+  );
+}
+
 export default App;
